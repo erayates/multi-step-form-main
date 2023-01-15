@@ -71,13 +71,13 @@
         <p class="step__description">Please provide your name, emal address, and phone number.</p>
 
         <label for="name" class="step-1__label">Name</label>
-        <input type="text" class="step-1__input" placeholder="e.g. Stephen King">
+        <input type="text" class="step-1__input" placeholder="e.g. Stephen King" id="fullname">
 
         <label for="email" class="step-1__label">Email Address</label>
-        <input type="email" class="step-1__input" placeholder="e.g. stephenking@lorem.com">
+        <input type="email" class="step-1__input" placeholder="e.g. stephenking@lorem.com" id="email">
 
-        <label for="email" class="step-1__label">Phone Number</label>
-        <input type="email" class="step-1__input" placeholder="e.g. +1 234 567 890">
+        <label for="number" class="step-1__label">Phone Number</label>
+        <input type="number" class="step-1__input" placeholder="e.g. +1 234 567 890" id="phone_number" min="0">
 
         <button class="step-1__button btn__next">Next Step</button>
 
@@ -90,19 +90,19 @@
         </div>
 
         <div class="step-2__plans">
-          <div class="step-2__plan">
+          <div class="step-2__plan" id="plan-1">
             <img src="assets/images/icon-arcade.svg" alt="Arcade" class="step-2__plan-image">
             <h3 class="step-2__plan-title">Arcade</h3>
             <p class="step-2__plan-price">$9/mo</p>
           </div>
 
-          <div class="step-2__plan">
+          <div class="step-2__plan" id="plan-2">
             <img src="assets/images/icon-advanced.svg" alt="Advanced" class="step-2__plan-image">
             <h3 class="step-2__plan-title">Advanced</h3>
             <p class="step-2__plan-price">$12/mo</p>
           </div>
 
-          <div class="step-2__plan">
+          <div class="step-2__plan" id="plan-3">
             <img src="assets/images/icon-pro.svg" alt="Pro" class="step-2__plan-image">
             <h3 class="step-2__plan-title">Pro</h3>
             <p class="step-2__plan-price">$15/mo</p>
@@ -112,7 +112,7 @@
       <div class="step-2__billing">
         <p id="step-2__billing-monthly">Monthly</p>
         <label class="switch">
-          <input type="checkbox">
+          <input type="checkbox" id="step-2__checkbox">
           <span class="slider round"></span>
         </label>
         <p id="step-2__billing-yearly">Yearly</p>
@@ -321,6 +321,7 @@
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>. -->
+    <script src="app.js"></script>
   </div>
 </body>
 </html>

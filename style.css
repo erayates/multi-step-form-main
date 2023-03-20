@@ -461,3 +461,45 @@ input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+
+/* Media Queries */
+@media screen and (max-width: 768px){
+    .container{
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .sidebar{
+        width: auto;
+    }
+    .sidebar__nav{
+        width: 100%;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .steps{
+        width: auto;
+    }
+
+    .step{
+        padding: 2rem;
+    }
+
+    .step-1__button{
+        margin-top: 1rem !important;
+    }
+
+    .step__footer{
+        margin-top: 0rem;
+    }
+
+    .step-3{
+        padding-top: 0rem !important;
+    }
+
+    #step-3__addon-3{
+        margin-bottom: 0.5rem !important;
+    }
+}

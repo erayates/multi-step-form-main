@@ -1,5 +1,4 @@
 // Steps
-
 const step1 = document.querySelector('.step-1')
 const step2 = document.querySelector('.step-2')
 const step3 = document.querySelector('.step-3')
@@ -30,6 +29,9 @@ const plan3 = document.querySelector('#plan-3')
 const addon1 = document.getElementById('step-3__addon-1')
 const addon2 = document.getElementById('step-3__addon-2')
 const addon3 = document.getElementById('step-3__addon-3')
+
+const receiptAddons = document.querySelector('.step-4__summary-selected-addons');
+
 
 addon1Checkbox = addon1.childNodes[1].childNodes[1].checked
 addon2Checkbox = addon2.childNodes[1].childNodes[1].checked
@@ -130,6 +132,7 @@ step3NextBtn.addEventListener('click', () => {
         step3.classList.toggle('hidden')
         step4.classList.toggle('hidden')
         receipt.push(selected_addons)
+        console.log(receipt)
         checkReceipt()
 
     }else{
@@ -157,7 +160,8 @@ step2BackBtn.addEventListener('click', () => {
 step3BackBtn.addEventListener('click', () => {
     step3.classList.toggle('hidden')
     step2.classList.toggle('hidden')
-    receipt.pop()
+    clearAddons();
+
     
 })
 
@@ -165,6 +169,7 @@ step4BackBtn.addEventListener('click', () => {
     step4.classList.toggle('hidden')
     step3.classList.toggle('hidden')
     receipt.pop()
+    clearAddons();
 })
 
 // Plan Selection
@@ -223,7 +228,6 @@ const isInputsEmpty = (name,email,phone) => {
 const checkReceipt = () => {
     const receiptPlanTitle = document.querySelector('.step-4__summary__details-title')
     const receiptPlanPrice = document.querySelector('.step-4__summary__details-price')
-    const receiptAddons = document.querySelector('.step-4__summary-selected-addons')
     const receiptPrice = document.querySelector('.step-4__summary__total-price-price')
 
     const totalPrice = receipt[0].price + receipt[1].reduce((acc,addon) => acc + addon.price,0)
@@ -242,4 +246,11 @@ const checkReceipt = () => {
     })
     receiptPrice.innerHTML = `$${totalPrice}/mo`
 
+}
+
+
+const clearAddons = () => {
+    selected_addons = [];
+    console.log(receiptAddons)
+    receiptAddons.innerHTML = "";
 }
